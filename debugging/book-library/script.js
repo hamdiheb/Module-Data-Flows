@@ -90,6 +90,7 @@ function render() {
       render();
     });
 
+    
         // add delete button to every row and render again
     let delButton = document.createElement("button");
     delButton.id = i;
