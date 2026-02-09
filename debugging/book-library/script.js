@@ -37,6 +37,7 @@ function submit() {
     return false;
   } else {
     let book = new Book(title.value, title.value, pages.value, check.checked);
+    console.log(book);
     myLibrary.push(book);
     render();
   }
@@ -79,10 +80,10 @@ function render() {
     let readStatus = "";
 
     if (myLibrary[i].check == false){
-      readStatus = "Yes";
+      readStatus = "No";
     }
     else{
-      readStatus = "No";
+      readStatus = "Yes";
     }
     //change value of read
     changeBut.innerText = readStatus;
