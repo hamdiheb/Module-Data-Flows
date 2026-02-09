@@ -55,8 +55,8 @@ function render() {
   let table = document.getElementById("display");
     //delete old table
   let rowsNumber = table.rows.length;
-  for(i=1;i<rowsNumber;i++){
-    table.deleteRow(i);
+  for(j=rowsNumber-1;j>0;j--){
+    table.deleteRow(j);
   }
 
     //insert updated row and cells
@@ -67,9 +67,11 @@ function render() {
     let pagesCell = newRow.insertCell(2);
     let wasReadCell = newRow.insertCell(3);
     let deleteCell = newRow.insertCell(4);
+
     titleCell.innerHTML = myLibrary[i].title;
     authorCell.innerHTML = myLibrary[i].author;
     pagesCell.innerHTML = myLibrary[i].pages;
+
     let changeBut = document.createElement("button");
     changeBut.id = i;
     changeBut.className = "btn btn-success";
@@ -99,7 +101,7 @@ function render() {
     delButton.innerHTML = "Delete";
     delButton.addEventListener("click", function () {
       alert(`You've deleted title: ${myLibrary[delButton.id].title}`);
-      myLibrary.splice(i, 1);
+      myLibrary.splice(delButton.id, 1);
       render();
     });
   
