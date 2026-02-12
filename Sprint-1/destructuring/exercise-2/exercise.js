@@ -70,3 +70,21 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+const allhogwartsUsers= (hogwarts) => {
+  for(const element of hogwarts){
+  const {firstName, lastName}=element;
+  console.log(`${firstName} ${lastName}`)
+}
+}
+
+allhogwartsUsers(hogwarts);
+const allhogwartsuserswithPet= (hogwarts) => {
+  for(const element of hogwarts){
+    const {firstName, lastName}=element
+  if(element.pet != null){
+    console.log(`${firstName} ${lastName} Have Pet`);
+  }
+}
+}
+allhogwartsuserswithPet(hogwarts);
